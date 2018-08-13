@@ -75,7 +75,6 @@
                 line-height: 1.0;
                 word-wrap: break-word;
                 overflow-x: hidden;
-                overflow: hidden;
             }
 
             u {
@@ -409,6 +408,14 @@
                 fill: #FFFFFF;
             }
 
+            #icons01 .n09 svg {
+              fill: rgba(255,255,255,0.392);
+            }
+
+            #icons01 .n09:hover svg {
+              fill: rgba(216, 0, 39, 0.8)
+            }
+
             #particles-js{
                 width: 100%;
                 height: 100%;
@@ -547,7 +554,7 @@
         <noscript>
             <style>
                 body {
-                    overflow: hidden !important;
+                    overflow: auto !important;
                 }
 
                 #main > .inner > * {
@@ -595,13 +602,16 @@
             <symbol id="icon-905" viewBox="0 0 40 40">
                 <path d="M36.3,10.2c-1,1.3-2.1,2.5-3.4,3.5c0,0.2,0,0.4,0,1c0,1.7-0.2,3.6-0.9,5.3c-0.6,1.7-1.2,3.5-2.4,5.1 c-1.1,1.5-2.3,3.1-3.7,4.3c-1.4,1.2-3.3,2.3-5.3,3c-2.1,0.8-4.2,1.2-6.6,1.2c-3.6,0-7-1-10.2-3c0.4,0,1.1,0.1,1.5,0.1 c3.1,0,5.9-1,8.2-2.9c-1.4,0-2.7-0.4-3.8-1.3c-1.2-1-1.9-2-2.2-3.3c0.4,0.1,1,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-1.4-0.3-2.7-1.1-3.7-2.3s-1.4-2.6-1.4-4.2v-0.1c1,0.6,2,0.9,3,0.9c-1-0.6-1.5-1.3-2.2-2.4c-0.6-1-0.9-2.1-0.9-3.3s0.3-2.3,1-3.4 c1.5,2.1,3.6,3.6,6,4.9s4.9,2,7.6,2.1c-0.1-0.6-0.1-1.1-0.1-1.4c0-1.8,0.8-3.5,2-4.7c1.2-1.2,2.9-2,4.7-2c2,0,3.6,0.8,4.8,2.1 c1.4-0.3,2.9-0.9,4.2-1.5c-0.4,1.5-1.4,2.7-2.9,3.6C33.8,11.2,35.1,10.9,36.3,10.2L36.3,10.2z"/>
             </symbol>
+            <symbol id="icon-999" viewBox="0 0 512 512">
+                <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+            </symbol>
         </svg>
         <div id="wrapper">
             <div id="particles-js"></div>
             <div id="main">
                 <div class="inner">
-                    <h1 id="text02">carlton</h1> <!--Change this to your name-->
-                    <p id="text01">a.k.a michael</p> <!--Change this to your name-->
+                    <h1 id="text02">"carlton"</h1> <!--Change this to your name-->
+                    <p id="text01">a.k.a. michael</p> <!--Change this to your name-->
                     <ul id="icons01" class="icons">
                         <li>
                             <a class="n01" href="https://twitter.com/frown"> <!--Change this to your name-->
@@ -625,6 +635,14 @@
                                     <use xlink:href="#icon-90a"></use>
                                 </svg>
                                 <span class="label">Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="n09" href="https://twitter.com/elegant">
+                                <svg>
+                                    <use xlink:href="#icon-999"></use>
+                                </svg>
+                                <span class="label">Love</span>
                             </a>
                         </li>
                     </ul>
