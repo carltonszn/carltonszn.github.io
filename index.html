@@ -178,7 +178,7 @@
                 display: -webkit-flex;
                 display: -ms-flex;
                 display: flex;
-                position: relative;
+                position: absolute;
                 max-width: 100%;
                 z-index: 1;
                 -moz-align-items: center;
@@ -411,15 +411,14 @@
             #particles-js{
                 width: 100%;
                 height: 100%;
-                background-color: #b6192400;
-                background-image: url('');
-                background-size: cover;
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-                position: absolute;
-                z-index: 0;
+                position: relative;
               }
 
+            canvas {
+              z-index: 0;
+              display: block;
+              vertical-align: bottom;
+            }
             @media (min-aspect-ratio: 16/9) {
                 .fullscreen-bg__video {
                     height: 300%;
@@ -569,7 +568,6 @@
         </noscript>
     </head>
     <body class="is-loading">
-        <div id="particles-js"></div>
         <iframe src="assets/audio/2.mp3" allow="autoplay" style="display:none" id="iframeAudio">
         </iframe> 
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
@@ -598,6 +596,7 @@
             </symbol>
         </svg>
         <div id="wrapper">
+            <div id="particles-js"></div>
             <div id="main">
                 <div class="inner">
                     <h1 id="text02">carlton</h1> <!--Change this to your name-->
@@ -792,11 +791,4 @@
                 }
             }
         </script>
-        <script>
-            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-              if(!isChrome){
-                $('#iframeAudio').remove()
-              }
-        </script>
-    </body>
 </html>
