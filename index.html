@@ -127,7 +127,7 @@
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                z-index: -99;
+                z-index: -99 !important;
                 -moz-pointer-events: none;
                 -webkit-pointer-events: none;
                 -ms-pointer-events: none;
@@ -430,7 +430,7 @@
             }
 
             canvas {
-                z-index: 10;
+                /* z-index: -10 imporant; */
                 display: block;
                 vertical-align: bottom;
             }
@@ -565,7 +565,7 @@
                 bottom: 0;
                 left: 0;
                 overflow: hidden;
-                z-index: -100;
+                z-index: -1 !important;
             }
 
             .fullscreen-bg__video {
@@ -654,7 +654,7 @@
                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
             </symbol>
         </svg>
-        <img src="assets/images/cached.png" id="switch" style="margin: 50px 0px 0px 50px; width: 2%; opacity: 0.5;filter: alpha(opacity=50); cursor: pointer;">
+        <img src="assets/images/cached.png" id="switch" style="margin: 50px 0px 0px 50px; width: 2%; opacity: 0.5;filter: alpha(opacity=50); cursor: pointer; z-index: 9999999999999999px !important;">
        
         <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid0" hidden>
                 <video loop class="fullscreen-bg__video">
@@ -684,6 +684,11 @@
         <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid5" hidden>
                 <video loop class="fullscreen-bg__video">
                     <source src="assets/video/NAV_Metro_Boomin_-_Call_Me[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid6" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/Thouxanbanfauni _Gorgeous_ (WSHH Exclusive - Official Music Video).mp4" type="video/mp4">
                 </video>
         </div>
 
@@ -773,10 +778,15 @@
             var sounds = document.getElementsByTagName('audio');
             for(i=0; i<sounds.length; i++) sounds[i].pause();
 
-
+                document.querySelector('canvas').style.display="none"
+                for(var i = 0; i < 7; i++) {
+                    document.getElementById('vidhid' + i).setAttribute('hidden', 'true')
+                }
+                var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[i].pause();
                 //lol i wrote this in 1 min i dont care if its trash
                 var d = Math.random();
-                if(d < 0.16) {
+                if(d < 0.14) {
          
                     var sounds = document.getElementsByTagName('video');
                     for(i=0; i<sounds.length; i++) sounds[0].play();
@@ -784,28 +794,34 @@
                     document.getElementById('vidhid0').removeAttribute('hidden')
                 }   
                 
-                else if(d < 0.32) {
+                else if(d < 0.28) {
                     var sounds = document.getElementsByTagName('video');
                     for(i=0; i<sounds.length; i++) sounds[1].play();
                     
                     document.getElementById('vidhid1').removeAttribute('hidden')
                 }
-                else if(d < 0.48) {
+                else if(d < 0.42) {
            
                     var sounds = document.getElementsByTagName('video');
                     for(i=0; i<sounds.length; i++) sounds[2].play();
                     
                     document.getElementById('vidhid2').removeAttribute('hidden')
                 }
-                else if(d < 0.64) {
+                else if(d < 0.54) {
                     var sounds = document.getElementsByTagName('video');
                     for(i=0; i<sounds.length; i++) sounds[3].play();
                     
                     document.getElementById('vidhid3').removeAttribute('hidden')
-                }else if(d < 0.80) {
+                }else if(d < 0.68) {
                     
                     var sounds = document.getElementsByTagName('video');
                     for(i=0; i<sounds.length; i++) sounds[4].play();
+                    
+                    document.getElementById('vidhid4').removeAttribute('hidden')
+                }else if(d < 0.84) {
+                    
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[6].play();
                     
                     document.getElementById('vidhid4').removeAttribute('hidden')
                 }
@@ -818,7 +834,7 @@
                 }
 
             
-            document.getElementById('main').style.zIndex= 99999999999999;
+            document.getElementById('main').style.zIndex= 9999999;
                 // alert('hello!');
              };
             
