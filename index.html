@@ -656,11 +656,38 @@
         </svg>
         <img src="assets/images/cached.png" id="switch" style="margin: 50px 0px 0px 50px; width: 2%; opacity: 0.5;filter: alpha(opacity=50); cursor: pointer;">
        
-        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid" hidden>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid0" hidden>
                 <video loop class="fullscreen-bg__video">
                     <source src="assets/video/vid.mp4" type="video/mp4">
                 </video>
-            </div>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid1" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/backseat_-_lil_tracy_x_lil_peep[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid2" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/lil_peep_-_benz_truck_prod_smokeasac[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid3" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/Lil_Tracy_-_This_Year_prod_BigHead[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid4" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/Lil_Uzi_Vert_-_You_Was_Right_Official_Music_Video[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="fullscreen-bg" style="z-index: 1000000;" id="vidhid5" hidden>
+                <video loop class="fullscreen-bg__video">
+                    <source src="assets/video/NAV_Metro_Boomin_-_Call_Me[BigConverter.com].mp4" type="video/mp4">
+                </video>
+        </div>
+
+
         <div id="wrapper">
             <div id="particles-js"></div>
             
@@ -746,10 +773,51 @@
             var sounds = document.getElementsByTagName('audio');
             for(i=0; i<sounds.length; i++) sounds[i].pause();
 
-            var sounds = document.getElementsByTagName('video');
-            for(i=0; i<sounds.length; i++) sounds[i].play();
+
+                //lol i wrote this in 1 min i dont care if its trash
+                var d = Math.random();
+                if(d < 0.16) {
+         
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[0].play();
+                    
+                    document.getElementById('vidhid0').removeAttribute('hidden')
+                }   
+                
+                else if(d < 0.32) {
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[1].play();
+                    
+                    document.getElementById('vidhid1').removeAttribute('hidden')
+                }
+                else if(d < 0.48) {
+           
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[2].play();
+                    
+                    document.getElementById('vidhid2').removeAttribute('hidden')
+                }
+                else if(d < 0.64) {
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[3].play();
+                    
+                    document.getElementById('vidhid3').removeAttribute('hidden')
+                }else if(d < 0.80) {
+                    
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[4].play();
+                    
+                    document.getElementById('vidhid4').removeAttribute('hidden')
+                }
+
+                else {
+                    var sounds = document.getElementsByTagName('video');
+                    for(i=0; i<sounds.length; i++) sounds[5].play();
+                    
+                    document.getElementById('vidhid5').removeAttribute('hidden')
+                }
+
             
-            document.getElementById('vidhid').removeAttribute('hidden')
             document.getElementById('main').style.zIndex= 99999999999999;
                 // alert('hello!');
              };
