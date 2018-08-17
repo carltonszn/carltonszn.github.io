@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head> derp
+    <head>
         <title>carlton</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
@@ -127,7 +127,7 @@
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                z-index: 0;
+                z-index: -99;
                 -moz-pointer-events: none;
                 -webkit-pointer-events: none;
                 -ms-pointer-events: none;
@@ -169,7 +169,7 @@
                 justify-content: center;
                 min-height: 100vh;
                 position: relative;
-                z-index: 2;
+                /* z-index: 2; */
                 overflow: hidden;
             }
 
@@ -180,7 +180,7 @@
                 display: flex;
                 position: absolute;
                 max-width: 100%;
-                z-index: 1;
+                /* z-index: 0; */
                 -moz-align-items: center;
                 -webkit-align-items: center;
                 -ms-align-items: center;
@@ -202,7 +202,7 @@
 
             #main > .inner {
                 position: relative;
-                z-index: 1;
+                /* z-index: 1; */
                 border-radius: inherit;
                 padding: 3.75rem 3rem;
                 max-width: 100%;
@@ -423,7 +423,7 @@
             }
 
             canvas {
-                z-index: 0;
+                z-index: 10000;
                 display: block;
                 vertical-align: bottom;
             }
@@ -577,7 +577,16 @@
         </noscript>
     </head>
     <body class="is-loading">
-        <iframe src="assets/audio/2.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+            <audio loop id="mix1">					
+                    <source src="./assets/audio/mix1.mp3" type="audio/mp3">      
+            </audio>
+            <audio loop id="mix2">					
+                    <source src="./assets/audio/mix2.mp3" type="audio/mp3">      
+            </audio>
+            <audio loop id="mix3">					
+                    <source src="./assets/audio/mix3.mp3" type="audio/mp3">      
+            </audio>
+    
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
             <symbol id="icon-90a" viewBox="0 0 40 40">
                 <path d="M37.3,15.3v15.3c0,0.8-0.3,1.6-0.9,2.2c-0.6,0.6-1.4,0.9-2.2,0.9H5.8c-0.8,0-1.6-0.3-2.2-0.9s-0.9-1.4-0.9-2.2V15.3 c0.5,0.6,1.2,1.1,2,1.7c4.7,3.1,7.9,5.4,9.6,6.7c0.7,0.5,1.4,0.9,1.8,1.2c0.4,0.3,1,0.6,1.9,0.9c0.7,0.3,1.5,0.5,2.1,0.5l0,0 c0.6,0,1.4-0.2,2.1-0.5c0.7-0.3,1.4-0.6,1.9-0.9c0.4-0.3,1-0.7,1.8-1.2c2.2-1.6,5.4-3.8,9.6-6.7C36.1,16.5,36.7,15.9,37.3,15.3 L37.3,15.3z M37.3,9.6c0,1-0.3,2-0.9,2.9c-0.6,0.9-1.5,1.8-2.4,2.4c-4.9,3.3-7.9,5.4-9,6.2c-0.1,0.1-0.4,0.3-0.8,0.6 c-0.4,0.3-0.7,0.5-1,0.7c-0.3,0.2-0.6,0.4-1,0.6c-0.4,0.2-0.7,0.4-1.1,0.5c-0.4,0.1-0.6,0.2-0.9,0.2l0,0c-0.3,0-0.6-0.1-0.9-0.2 c-0.3-0.1-0.7-0.3-1.1-0.5c-0.4-0.2-0.7-0.4-1-0.6c-0.3-0.2-0.6-0.4-1-0.7c-0.4-0.3-0.7-0.5-0.8-0.6c-1.1-0.8-2.8-2-5.1-3.5 c-2.3-1.6-3.3-2.4-3.7-2.7c-0.8-0.5-1.6-1.2-2.3-2.2s-1-1.9-1-2.6c0-1,0.3-1.9,0.8-2.5c0.5-0.6,1.2-1,2.3-1h28.4 c0.8,0,1.6,0.3,2.2,0.9C37.1,8.1,37.3,8.8,37.3,9.6L37.3,9.6z"/>
@@ -608,8 +617,8 @@
         </svg>
         <div id="wrapper">
             <div id="particles-js"></div>
-            <div id="main">
-                <div class="inner">
+            <div id="main" style="z-index: -1 !important;">
+                <div class="inner" >
                     <h1 id="text02">michael</h1>
                     <!--Change this to your name-->
                     <p id="text01" style="padding-left: 3px;">a.k.a. "carlton"</p>
@@ -663,6 +672,30 @@
         </div>
         <script src="./assets/js/particles.min.js" type="text/javascript"></script>
         <script src="./assets/js/app.js"></script>
+        <script>
+            // matt was here. derp >_<
+            
+            window.onload = function() {
+                var d = Math.random();
+                if(d < 0.3) {
+         
+                    document.getElementById('mix1').play();
+                }
+                
+                else if(d < 0.6) {
+           
+                    document.getElementById('mix2').play();
+                }
+
+                else {
+       
+                    document.getElementById('mix3').play();
+                }
+               
+            }
+            
+        
+        </script>
         <script>
             var on = addEventListener
               , $ = function(q) {
